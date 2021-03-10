@@ -1,0 +1,22 @@
+<!DOCTYPE html> {% extends "base.html" %}
+<!--block content-->
+
+{% block contenu %}
+
+<div class="row mt-4">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <form class="form-group">
+                    <div class="alert alert-danger">
+                        Êtes-vous sûr de vouloir supprimer {{contact}}
+                    </div>
+                    <button type="submit" class="btn btn-danger">Oui</button>
+                    <a href="{% url 'contacts' %}" class="btn btn-info">Non</a>
+                </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

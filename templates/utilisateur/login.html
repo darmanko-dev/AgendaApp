@@ -1,0 +1,19 @@
+<!doctype html> {% extends "base.html" %} {% block contenu %}
+<div class="row">
+    <div class="col-md-6 col-auto mt-2">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group ">
+                <legend class="border-bottom mb-4 ">Login</legend>
+                {{ form.as_p}}
+            </fieldset>
+            <div class="form-group ">
+                <button type="submit " class="btn btn-primary ">Connexion</button>
+            </div>
+        </form>
+        <p>Vous êtes nouveau ?
+            <a href="{% url 'register' %}">S'inscrire</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
